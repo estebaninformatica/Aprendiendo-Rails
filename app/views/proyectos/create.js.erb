@@ -1,0 +1,10 @@
+<% if @proyecto.new_record? %>	
+
+	$('input#proyecto_name').effect('highlight',{ color: 'red'});
+
+<% else %>
+
+	$('div#proyecto').append("<%= escape_javascript(render @proyecto) %>");
+	$('div#<%= dom_id(@proyecto) %>').effect('highlight');
+	
+<% end %>

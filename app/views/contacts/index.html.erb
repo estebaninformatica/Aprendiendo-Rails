@@ -1,0 +1,35 @@
+<h1>Listing contacts</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>nombre</th>
+      <th>phone</th>
+      <th>email</th>
+      <th>created_at</th>
+      <th>description</th>
+      <th>Proyectos</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+
+<% @contacts.each do |contact| %>
+  <tr id=<%= dom_id(contact)%>>
+    <td><%= contact.image %></td>
+    <td><%= contact.nombre %></td>
+    <td><%= contact.phone %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.created_at %></td>
+    <td><%= contact.description %></td>
+    <td><%= contact.proyectos.all %></td>
+    <td><%= link_to 'Show', contact %></td>
+    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    <td><%= link_to 'Destroy', contact, method: :delete,remote:true ,:class => 'btn btn-mini btn-danger'%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact', new_contact_path , id:"new_contact" %>

@@ -1,0 +1,18 @@
+<tr>
+        <td><%= link_to proyecto.id, proyecto_path(proyecto) %></td>
+        <td><%= proyecto.name %></td>
+        <td><%= proyecto.description %></td>
+        <td><%= proyecto.lenguage %></td>
+        <td><%= proyecto.link %></td>
+        <td><%= proyecto.image %></td>
+        <td><%=l proyecto.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_proyecto_path(proyecto), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      proyecto_path(proyecto),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+</tr>

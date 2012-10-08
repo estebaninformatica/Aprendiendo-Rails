@@ -1,0 +1,24 @@
+<dl class="dl-horizontal">
+
+  <dt><strong>image:</strong></dt>
+  <dd><%= @contact.image %></dd>  
+
+  <dt><strong>description:</strong></dt>
+  <dd><%= @contact.description %></dd>
+
+  <dt><strong>nombre:</strong></dt>
+  <dd><%= @contact.phone %></dd>
+
+  <dt><strong>phone:</strong></dt>
+  <dd><%= @contact.phone %></dd>
+
+  <dt><strong>Proyectos:</strong></dt>
+  <dd><%=  @contact.proyectos.name  %></dd>
+
+  <dt><strong>email:</strong></dt>
+  <dd><%= @contact.image %></dd>
+
+</dl>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

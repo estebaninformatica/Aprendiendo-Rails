@@ -1,0 +1,18 @@
+<%= simple_form_for @proyecto, :html => { :class => 'form-horizontal' } do |f| %>
+  
+  <%= f.input :name %>  
+
+  <%= f.input :description %>  
+
+  <%= f.input :lenguage %>  
+
+  <%= f.input :link %>  
+
+  <%= f.input :image %>  
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                proyectos_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= simple_form_for @contact, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <%= f.input :nombre  %>
+
+  <%= f.input :image %>
+   
+  <%= f.input :description %> 
+  
+  <%= f.input :phone %>
+  
+  <%= f.input :email %>
+
+  <%if Proyecto.all.any?%>
+    <ul>
+    <% Proyecto.all.each do |proyecto| %>
+      <li>
+        <%input_id = "user_proyecto_ids_#{proyecto.id}"%>
+        <%=check_box_tag "contact[proyecto_ids][]", proyecto.id, @contact.proyecto_ids.include?(proyecto.id), :id => input_id%>
+        <%= proyecto.name%>
+      </li>
+    <%end%>
+  </ul>
+<%end%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
